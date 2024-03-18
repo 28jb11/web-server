@@ -2,8 +2,6 @@ package main
 
 import (
 	"28jb11/web-server/handlers"
-	"28jb11/web-server/helpers"
-	"28jb11/web-server/models"
 	"28jb11/web-server/templates"
 
 	"github.com/a-h/templ"
@@ -16,11 +14,12 @@ func render(c *gin.Context, status int, template templ.Component) error {
 }
 func main() {
 
-	grid := helpers.GenerateGrid(100, 100)
+	// grid := handlers.GenerateGrid(20, 20)
+	//
+	// gridComponent := models.GridComponent{Grid: grid}
+	//
+	// gridHtml := handlers.RenderGrid(gridComponent.Grid)
 
-	gridComponent := models.GridComponent{Grid: grid}
-
-	gridHtml := handlers.RenderGrid(gridComponent.Grid)
 	r := gin.Default()
 
 	r.GET("/", func(c *gin.Context) {
@@ -28,7 +27,7 @@ func main() {
 	})
 
 	r.GET("/grid", func(c *gin.Context) {
-		render(c, 200, templates.Grid(gridHtml))
+		render(c, 200, templates.Grid(handlers.GetGridHtmlString()))
 	})
 
 	r.Run()

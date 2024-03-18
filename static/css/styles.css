@@ -1,0 +1,21 @@
+.pixel-container {
+  position: relative; /* Allows absolute positioning within the container */
+  width: 10px; /* Width of the pixel */
+  height: 10px; /* Height of the pixel */
+  display: inline-block; /* Layout pixels inline */
+}
+
+.pixel {
+  width: 100%; /* Fill the container */
+  height: 100%; /* Fill the container */
+  background-color: #444; /* Pixel color */
+}
+
+.pixel-coords {
+  position: absolute; /* Position within the pixel container */
+  bottom: 0; /* Align to the bottom of the container */
+  left: 0; /* Align to the left of the container */
+  font-size: 6px; /* Small font size to fit on the pixel */
+  color: #fff; /* Text color */
+  pointer-events: none; /* Prevents the text from blocking mouse events for the pixel */
+}
