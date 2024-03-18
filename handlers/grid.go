@@ -4,17 +4,16 @@ import (
 	"fmt"
 
 	"28jb11/web-server/models"
-
-	"github.com/a-h/templ"
 )
 
-func RenderGrid(grid [][]models.Pixel) templ.Component {
-	html := "<div class=\"grid-container\">\n"
+func RenderGrid(grid [][]models.Pixel) string {
+	html := "<div style=\"font-size: 0;\">\n"
 	for _, row := range grid {
 		for _, pixel := range row {
-			html += fmt.Sprintf("<div class=\"pixel\" style=\"background-color: %s;\"></div>\n", pixel.Color)
+			html += fmt.Sprintf("<div style=\"display: inline-block; background-color: %s; width: 10px; height: 10px; margin: 1px;\"></div>\n", pixel.Color)
 		}
+		html += "<div style=\"clear: both;\"></div>\n" // This acts as a line break
 	}
-	html += "</div>"
-	return templ.Raw(html)
+	html += "</div>\n"
+	return html
 }

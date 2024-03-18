@@ -1,0 +1,18 @@
+package templates
+
+import (
+		)
+
+templ Grid(grid string) {
+
+	<!DOCTYPE html>
+	<html rel="stylesheet" href="static/css/styles.css">
+		<head>
+		<title>Grid</title>
+		</head>
+		<body>
+		@templ.Raw(grid)
+		</body>
+
+	</html>
+}
