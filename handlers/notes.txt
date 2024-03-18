@@ -1,0 +1,7 @@
+- Blog
+- TODO list
+- Calculator
+- Invoicing system
+- User management
+- User profile
+- Pixel grid game
